@@ -8,6 +8,8 @@
 
 #import "LBViewController.h"
 #import "LBNewsfeedViewController.h"
+#import "LBSession.h"
+#import "LBLoginViewController.h"
 
 @interface LBViewController ()
 
@@ -24,15 +26,22 @@
     [self.segmentControl addTarget:self
                          action:@selector(pickOne:)
                forControlEvents:UIControlEventValueChanged];
+
     if (!self.newsfeedViewController){
         self.newsfeedViewController = [[LBNewsfeedViewController alloc] initWithNibName:@"LBNewsfeedViewController" bundle:nil];
         [self.newsfeedViewController.view setFrame:self.containerView.bounds];
     }
     [self.containerView addSubview:self.newsfeedViewController.view];
     
+
     
 }
-
+-(void) viewDidAppear:(BOOL)animated{
+    if(![LBSession defaultSession].sessionID){
+        [self presentViewController:[[LBLoginViewController alloc]init] animated:YES completion:nil];
+        
+    }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
