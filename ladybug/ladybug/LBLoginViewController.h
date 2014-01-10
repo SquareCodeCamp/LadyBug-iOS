@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface LBLoginViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIButton *logInButton;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *password;
-@property (weak, nonatomic) IBOutlet UIButton *logInButton;
+- (IBAction)registerButtonPressed:(id)sender;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 - (IBAction)logInButtonPressed:(id)sender;
 @end

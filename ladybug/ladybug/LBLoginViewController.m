@@ -29,6 +29,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.logInButton.layer setCornerRadius:5.0 ];
+    [self.registerButton.layer setCornerRadius:5.0];
     // Do any additional setup after loading the view from its nib.
 }
 - (void)viewDidAppear:(BOOL)animated
@@ -64,7 +66,7 @@
 
 - (IBAction)logInButtonPressed:(id)sender {
     //send stuff to the server
-    NSURLRequest * request= [NSURLRequest requestWithURL:[NSURL URLWithString:@"codecamp-ladybug.herokuapp.com"]];
+    NSURLRequest * request= [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://codecamp-ladybug.herokuapp.com"]];
     
     [NSURLConnection sendAsynchronousRequest:request  queue:self.loginQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
             LBSession * current= [LBSession defaultSession];
@@ -75,4 +77,8 @@
     
 }
 
+- (IBAction)registerButtonPressed:(id)sender {
+    NSString * urlString=[NSString stringWithFormat:@"http://codecamp-ladybug.herokuapp.com/register&email=%@", self.email.text];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
+}
 @end
