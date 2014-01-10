@@ -44,8 +44,10 @@
     
     [NSURLConnection sendAsynchronousRequest:request  queue:self.newsfeedQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         if (!connectionError){
-            [self.posts updatePosts:data];
-            [self.tableView reloadData];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [self.posts updatePosts:data];
+                [self.tableView reloadData];
+            }];
             
         }else{
             NSLog(@"%@", connectionError);
