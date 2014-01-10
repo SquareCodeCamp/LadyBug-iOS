@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590755C6188079C100561819 /* LBLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590755C4188079C100561819 /* LBLoginViewController.m */; };
+		590755C7188079C100561819 /* LBLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590755C5188079C100561819 /* LBLoginViewController.xib */; };
+		590755CA18807C9B00561819 /* LBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 590755C918807C9B00561819 /* LBUser.m */; };
+		590755CD18807E0C00561819 /* LBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 590755CC18807E0C00561819 /* LBSession.m */; };
 		590AD00018806F7400594334 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590ACFFF18806F7400594334 /* Foundation.framework */; };
 		590AD00218806F7400594334 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590AD00118806F7400594334 /* CoreGraphics.framework */; };
 		590AD00418806F7400594334 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 590AD00318806F7400594334 /* UIKit.framework */; };
@@ -27,6 +31,7 @@
 		590AD0401880726200594334 /* LBPeopleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590AD03E1880726200594334 /* LBPeopleViewController.xib */; };
 		590AD0441880728500594334 /* LBProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AD0421880728500594334 /* LBProfileViewController.m */; };
 		590AD0451880728500594334 /* LBProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590AD0431880728500594334 /* LBProfileViewController.xib */; };
+		5991C7FC18809A6600FC6A0D /* ladybug.png in Resources */ = {isa = PBXBuildFile; fileRef = 5991C7FB18809A6600FC6A0D /* ladybug.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		590755C3188079C100561819 /* LBLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBLoginViewController.h; sourceTree = "<group>"; };
+		590755C4188079C100561819 /* LBLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBLoginViewController.m; sourceTree = "<group>"; };
+		590755C5188079C100561819 /* LBLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBLoginViewController.xib; sourceTree = "<group>"; };
+		590755C818807C9B00561819 /* LBUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBUser.h; sourceTree = "<group>"; };
+		590755C918807C9B00561819 /* LBUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBUser.m; sourceTree = "<group>"; };
+		590755CB18807E0C00561819 /* LBSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBSession.h; sourceTree = "<group>"; };
+		590755CC18807E0C00561819 /* LBSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBSession.m; sourceTree = "<group>"; };
 		590ACFFC18806F7400594334 /* ladybug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ladybug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		590ACFFF18806F7400594334 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		590AD00118806F7400594334 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -68,6 +80,7 @@
 		590AD0411880728500594334 /* LBProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProfileViewController.h; sourceTree = "<group>"; };
 		590AD0421880728500594334 /* LBProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProfileViewController.m; sourceTree = "<group>"; };
 		590AD0431880728500594334 /* LBProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBProfileViewController.xib; sourceTree = "<group>"; };
+		5991C7FB18809A6600FC6A0D /* ladybug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ladybug.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +144,10 @@
 				590AD00F18806F7400594334 /* LBAppDelegate.m */,
 				590AD01118806F7400594334 /* Main_iPhone.storyboard */,
 				590AD01718806F7400594334 /* LBViewController.h */,
+				590755C818807C9B00561819 /* LBUser.h */,
+				590755CB18807E0C00561819 /* LBSession.h */,
+				590755CC18807E0C00561819 /* LBSession.m */,
+				590755C918807C9B00561819 /* LBUser.m */,
 				590AD01818806F7400594334 /* LBViewController.m */,
 				590AD03C1880726200594334 /* LBPeopleViewController.h */,
 				590AD03D1880726200594334 /* LBPeopleViewController.m */,
@@ -141,6 +158,9 @@
 				590AD0371880724B00594334 /* LBNewsfeedViewController.h */,
 				590AD0381880724B00594334 /* LBNewsfeedViewController.m */,
 				590AD0391880724B00594334 /* LBNewsfeedViewController.xib */,
+				590755C3188079C100561819 /* LBLoginViewController.h */,
+				590755C4188079C100561819 /* LBLoginViewController.m */,
+				590755C5188079C100561819 /* LBLoginViewController.xib */,
 				590AD01A18806F7400594334 /* Images.xcassets */,
 				590AD00618806F7400594334 /* Supporting Files */,
 			);
@@ -150,6 +170,7 @@
 		590AD00618806F7400594334 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5991C7FB18809A6600FC6A0D /* ladybug.png */,
 				590AD00718806F7400594334 /* ladybug-Info.plist */,
 				590AD00818806F7400594334 /* InfoPlist.strings */,
 				590AD00B18806F7400594334 /* main.m */,
@@ -259,6 +280,8 @@
 				590AD00A18806F7400594334 /* InfoPlist.strings in Resources */,
 				590AD03B1880724B00594334 /* LBNewsfeedViewController.xib in Resources */,
 				590AD0401880726200594334 /* LBPeopleViewController.xib in Resources */,
+				5991C7FC18809A6600FC6A0D /* ladybug.png in Resources */,
+				590755C7188079C100561819 /* LBLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +306,9 @@
 				590AD03F1880726200594334 /* LBPeopleViewController.m in Sources */,
 				590AD0441880728500594334 /* LBProfileViewController.m in Sources */,
 				590AD03A1880724B00594334 /* LBNewsfeedViewController.m in Sources */,
+				590755C6188079C100561819 /* LBLoginViewController.m in Sources */,
+				590755CA18807C9B00561819 /* LBUser.m in Sources */,
+				590755CD18807E0C00561819 /* LBSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +519,7 @@
 				590AD03318806F7400594334 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		590AD03418806F7400594334 /* Build configuration list for PBXNativeTarget "ladybugTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +528,7 @@
 				590AD03618806F7400594334 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

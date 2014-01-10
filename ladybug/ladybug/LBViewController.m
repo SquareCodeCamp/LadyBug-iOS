@@ -8,6 +8,8 @@
 
 #import "LBViewController.h"
 #import "LBNewsfeedViewController.h"
+#import "LBSession.h"
+#import "LBLoginViewController.h"
 
 @interface LBViewController ()
 
@@ -24,9 +26,15 @@
     [self.segmentControl addTarget:self
                          action:@selector(pickOne:)
                forControlEvents:UIControlEventValueChanged];
+
     
 }
-
+-(void) viewDidAppear:(BOOL)animated{
+    if(![LBSession defaultSession].sessionID){
+        [self presentViewController:[[LBLoginViewController alloc]init] animated:YES completion:nil];
+        
+    }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

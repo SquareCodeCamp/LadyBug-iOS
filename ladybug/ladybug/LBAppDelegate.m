@@ -7,6 +7,8 @@
 //
 
 #import "LBAppDelegate.h"
+#import "LBSession.h"
+#import "LBLoginViewController.h"
 
 @implementation LBAppDelegate
 
