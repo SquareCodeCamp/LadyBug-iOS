@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LBNewsfeedViewController">
             <connections>
+                <outlet property="tableView" destination="JLi-uc-ALI" id="jQh-AK-KOh"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LBPosts.h"
 @interface LBNewsfeedViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (strong, nonatomic) NSArray * tableData;
+@property (strong, nonatomic) LBPosts * posts;
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

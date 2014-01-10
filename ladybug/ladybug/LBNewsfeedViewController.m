@@ -8,8 +8,10 @@
 
 #import "LBNewsfeedViewController.h"
 #import "LBNewsfeedCell.h"
+#import "LBpost.h"
 
 @interface LBNewsfeedViewController ()
+@property NSOperationQueue* newsfeedQueue;
 
 @end
 
@@ -19,7 +21,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _posts = [[LBPosts alloc] init];
+        self.newsfeedQueue = [[NSOperationQueue alloc] init];
     }
     return self;
 }
@@ -28,16 +31,32 @@
 {
     [super viewDidLoad];
     //TODO: create list with User objects
-
+    
+    [self makeJSONRequest];
 
 }
 
+-(void)makeJSONRequest{
+    
+    NSMutableURLRequest * request= [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://codecamp-ladybug.herokuapp.com/posts.json"]];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-type"];
+    
+    [NSURLConnection sendAsynchronousRequest:request  queue:self.newsfeedQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (!connectionError){
+            [self.posts updatePosts:data];
+            [self.tableView reloadData];
+            
+        }else{
+            NSLog(@"%@", connectionError);
+        }
+    }];
 
+}
 //delegate method
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     //TODO: change to however many users we have
-    return 50;
+    return [self.posts.postsArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -52,6 +71,12 @@
     }
     
     //TODO: change to actual user data
+    LBPost *post = self.posts.postsArray[indexPath.row];
+    cell.name.text = post.user.name;
+    cell.location.text=post.user.city;
+    cell.profileImage.image = post.user.pic;
+    cell.postText.text = post.content;
+    
     
     return cell;
 }

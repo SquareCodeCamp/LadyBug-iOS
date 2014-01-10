@@ -1,5 +1,5 @@
 //
-//  LBPeopleViewController.h
+//  LBNPeopleViewController.h
 //  ladybug
 //
 //  Created by square on 1/10/14.
@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LBPosts.h"
 
-@interface LBPeopleViewController : UIViewController
+@interface LBPeopleViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) NSArray * tableData;
+@property (strong, nonatomic) LBPosts * posts;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

@@ -37,6 +37,8 @@
 		590AD04E188095B000594334 /* bri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 590AD04D188095B000594334 /* bri.jpg */; };
 		590AD05218809C0D00594334 /* ProfileTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590AD05118809C0D00594334 /* ProfileTableCell.xib */; };
 		590AD05C18809F4C00594334 /* LBProfileTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AD05B18809F4C00594334 /* LBProfileTableCell.m */; };
+		590AD05F1880A56400594334 /* LBPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AD05E1880A56400594334 /* LBPost.m */; };
+		590AD0621880A57B00594334 /* LBPosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AD0611880A57B00594334 /* LBPosts.m */; };
 		5991C7FC18809A6600FC6A0D /* ladybug.png in Resources */ = {isa = PBXBuildFile; fileRef = 5991C7FB18809A6600FC6A0D /* ladybug.png */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,10 @@
 		590AD05118809C0D00594334 /* ProfileTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileTableCell.xib; path = ../ProfileTableCell.xib; sourceTree = "<group>"; };
 		590AD05A18809F4C00594334 /* LBProfileTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProfileTableCell.h; sourceTree = "<group>"; };
 		590AD05B18809F4C00594334 /* LBProfileTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProfileTableCell.m; sourceTree = "<group>"; };
+		590AD05D1880A56400594334 /* LBPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPost.h; sourceTree = "<group>"; };
+		590AD05E1880A56400594334 /* LBPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPost.m; sourceTree = "<group>"; };
+		590AD0601880A57B00594334 /* LBPosts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBPosts.h; sourceTree = "<group>"; };
+		590AD0611880A57B00594334 /* LBPosts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBPosts.m; sourceTree = "<group>"; };
 		5991C7FB18809A6600FC6A0D /* ladybug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ladybug.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -259,8 +265,9 @@
 				590AD04B188080A000594334 /* LBNewsfeedCell.m */,
 				590AD0481880802200594334 /* LBNewsfeedCell.xib */,
 				590AD0391880724B00594334 /* LBNewsfeedViewController.xib */,
-				590AD0381880724B00594334 /* LBNewsfeedViewController.m */,
 				590AD0371880724B00594334 /* LBNewsfeedViewController.h */,
+				590AD0381880724B00594334 /* LBNewsfeedViewController.m */,
+				590AD0631880A58200594334 /* Post */,
 			);
 			name = Newsfeed;
 			sourceTree = "<group>";
@@ -273,6 +280,25 @@
 				590755C4188079C100561819 /* LBLoginViewController.m */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		590AD0631880A58200594334 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				590AD0641880A59200594334 /* Posts */,
+				590AD05D1880A56400594334 /* LBPost.h */,
+				590AD05E1880A56400594334 /* LBPost.m */,
+			);
+			name = Post;
+			sourceTree = "<group>";
+		};
+		590AD0641880A59200594334 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				590AD0611880A57B00594334 /* LBPosts.m */,
+				590AD0601880A57B00594334 /* LBPosts.h */,
+			);
+			name = Posts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,7 +414,9 @@
 				590AD01918806F7400594334 /* LBViewController.m in Sources */,
 				590AD03F1880726200594334 /* LBPeopleViewController.m in Sources */,
 				590AD0441880728500594334 /* LBProfileViewController.m in Sources */,
+				590AD0621880A57B00594334 /* LBPosts.m in Sources */,
 				590AD03A1880724B00594334 /* LBNewsfeedViewController.m in Sources */,
+				590AD05F1880A56400594334 /* LBPost.m in Sources */,
 				590AD04C188080A000594334 /* LBNewsfeedCell.m in Sources */,
 				590755C6188079C100561819 /* LBLoginViewController.m in Sources */,
 				590755CA18807C9B00561819 /* LBUser.m in Sources */,
