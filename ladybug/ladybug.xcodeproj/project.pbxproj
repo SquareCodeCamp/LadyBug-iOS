@@ -36,6 +36,7 @@
 		590AD04C188080A000594334 /* LBNewsfeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AD04B188080A000594334 /* LBNewsfeedCell.m */; };
 		590AD04E188095B000594334 /* bri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 590AD04D188095B000594334 /* bri.jpg */; };
 		590AD05218809C0D00594334 /* ProfileTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590AD05118809C0D00594334 /* ProfileTableCell.xib */; };
+		590AD05C18809F4C00594334 /* LBProfileTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AD05B18809F4C00594334 /* LBProfileTableCell.m */; };
 		5991C7FC18809A6600FC6A0D /* ladybug.png in Resources */ = {isa = PBXBuildFile; fileRef = 5991C7FB18809A6600FC6A0D /* ladybug.png */; };
 /* End PBXBuildFile section */
 
@@ -90,7 +91,9 @@
 		590AD04A188080A000594334 /* LBNewsfeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBNewsfeedCell.h; sourceTree = "<group>"; };
 		590AD04B188080A000594334 /* LBNewsfeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBNewsfeedCell.m; sourceTree = "<group>"; };
 		590AD04D188095B000594334 /* bri.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bri.jpg; sourceTree = "<group>"; };
-		590AD05118809C0D00594334 /* ProfileTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableCell.xib; sourceTree = "<group>"; };
+		590AD05118809C0D00594334 /* ProfileTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileTableCell.xib; path = ../ProfileTableCell.xib; sourceTree = "<group>"; };
+		590AD05A18809F4C00594334 /* LBProfileTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProfileTableCell.h; sourceTree = "<group>"; };
+		590AD05B18809F4C00594334 /* LBProfileTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProfileTableCell.m; sourceTree = "<group>"; };
 		5991C7FB18809A6600FC6A0D /* ladybug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ladybug.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +124,6 @@
 		590ACFF318806F7400594334 = {
 			isa = PBXGroup;
 			children = (
-				590AD05118809C0D00594334 /* ProfileTableCell.xib */,
 				590AD00518806F7400594334 /* ladybug */,
 				590AD02718806F7400594334 /* ladybugTests */,
 				590ACFFE18806F7400594334 /* Frameworks */,
@@ -152,30 +154,13 @@
 		590AD00518806F7400594334 /* ladybug */ = {
 			isa = PBXGroup;
 			children = (
-				590AD00E18806F7400594334 /* LBAppDelegate.h */,
-				590AD00F18806F7400594334 /* LBAppDelegate.m */,
-				590AD01118806F7400594334 /* Main_iPhone.storyboard */,
-				590AD01718806F7400594334 /* LBViewController.h */,
-				590755C818807C9B00561819 /* LBUser.h */,
-				590755CB18807E0C00561819 /* LBSession.h */,
-				590755CC18807E0C00561819 /* LBSession.m */,
-				590755C918807C9B00561819 /* LBUser.m */,
-				590AD01818806F7400594334 /* LBViewController.m */,
-				590AD03C1880726200594334 /* LBPeopleViewController.h */,
-				590AD03D1880726200594334 /* LBPeopleViewController.m */,
-				590AD03E1880726200594334 /* LBPeopleViewController.xib */,
-				590AD0411880728500594334 /* LBProfileViewController.h */,
-				590AD0421880728500594334 /* LBProfileViewController.m */,
-				590AD0431880728500594334 /* LBProfileViewController.xib */,
-				590AD0371880724B00594334 /* LBNewsfeedViewController.h */,
-				590AD0381880724B00594334 /* LBNewsfeedViewController.m */,
-				590AD0391880724B00594334 /* LBNewsfeedViewController.xib */,
-				590AD0481880802200594334 /* LBNewsfeedCell.xib */,
-				590AD04A188080A000594334 /* LBNewsfeedCell.h */,
-				590AD04B188080A000594334 /* LBNewsfeedCell.m */,
-				590755C3188079C100561819 /* LBLoginViewController.h */,
-				590755C4188079C100561819 /* LBLoginViewController.m */,
-				590755C5188079C100561819 /* LBLoginViewController.xib */,
+				590AD05318809E0900594334 /* Main stuff */,
+				590AD05518809E4B00594334 /* Session */,
+				590AD05418809E2E00594334 /* User */,
+				590AD05618809E6500594334 /* People */,
+				590AD05718809E7700594334 /* Profile */,
+				590AD05818809E8700594334 /* Newsfeed */,
+				590AD05918809E9800594334 /* Login */,
 				590AD01A18806F7400594334 /* Images.xcassets */,
 				590AD00618806F7400594334 /* Supporting Files */,
 			);
@@ -212,6 +197,82 @@
 				590AD02A18806F7400594334 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		590AD05318809E0900594334 /* Main stuff */ = {
+			isa = PBXGroup;
+			children = (
+				590AD01818806F7400594334 /* LBViewController.m */,
+				590AD00F18806F7400594334 /* LBAppDelegate.m */,
+				590AD01718806F7400594334 /* LBViewController.h */,
+				590AD01118806F7400594334 /* Main_iPhone.storyboard */,
+				590AD00E18806F7400594334 /* LBAppDelegate.h */,
+			);
+			name = "Main stuff";
+			sourceTree = "<group>";
+		};
+		590AD05418809E2E00594334 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				590755C918807C9B00561819 /* LBUser.m */,
+				590755C818807C9B00561819 /* LBUser.h */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		590AD05518809E4B00594334 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				590755CC18807E0C00561819 /* LBSession.m */,
+				590755CB18807E0C00561819 /* LBSession.h */,
+			);
+			name = Session;
+			sourceTree = "<group>";
+		};
+		590AD05618809E6500594334 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				590AD03D1880726200594334 /* LBPeopleViewController.m */,
+				590AD03E1880726200594334 /* LBPeopleViewController.xib */,
+				590AD03C1880726200594334 /* LBPeopleViewController.h */,
+			);
+			name = People;
+			sourceTree = "<group>";
+		};
+		590AD05718809E7700594334 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				590AD0421880728500594334 /* LBProfileViewController.m */,
+				590AD0431880728500594334 /* LBProfileViewController.xib */,
+				590AD0411880728500594334 /* LBProfileViewController.h */,
+				590AD05118809C0D00594334 /* ProfileTableCell.xib */,
+				590AD05A18809F4C00594334 /* LBProfileTableCell.h */,
+				590AD05B18809F4C00594334 /* LBProfileTableCell.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		590AD05818809E8700594334 /* Newsfeed */ = {
+			isa = PBXGroup;
+			children = (
+				590AD04A188080A000594334 /* LBNewsfeedCell.h */,
+				590AD04B188080A000594334 /* LBNewsfeedCell.m */,
+				590AD0481880802200594334 /* LBNewsfeedCell.xib */,
+				590AD0391880724B00594334 /* LBNewsfeedViewController.xib */,
+				590AD0381880724B00594334 /* LBNewsfeedViewController.m */,
+				590AD0371880724B00594334 /* LBNewsfeedViewController.h */,
+			);
+			name = Newsfeed;
+			sourceTree = "<group>";
+		};
+		590AD05918809E9800594334 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				590755C5188079C100561819 /* LBLoginViewController.xib */,
+				590755C3188079C100561819 /* LBLoginViewController.h */,
+				590755C4188079C100561819 /* LBLoginViewController.m */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +384,7 @@
 			files = (
 				590AD01018806F7400594334 /* LBAppDelegate.m in Sources */,
 				590AD00C18806F7400594334 /* main.m in Sources */,
+				590AD05C18809F4C00594334 /* LBProfileTableCell.m in Sources */,
 				590AD01918806F7400594334 /* LBViewController.m in Sources */,
 				590AD03F1880726200594334 /* LBPeopleViewController.m in Sources */,
 				590AD0441880728500594334 /* LBProfileViewController.m in Sources */,
