@@ -161,7 +161,6 @@
 				590AD05718809E7700594334 /* Profile */,
 				590AD05818809E8700594334 /* Newsfeed */,
 				590AD05918809E9800594334 /* Login */,
-				590AD01A18806F7400594334 /* Images.xcassets */,
 				590AD00618806F7400594334 /* Supporting Files */,
 			);
 			path = ladybug;
@@ -271,6 +270,7 @@
 				590755C5188079C100561819 /* LBLoginViewController.xib */,
 				590755C3188079C100561819 /* LBLoginViewController.h */,
 				590755C4188079C100561819 /* LBLoginViewController.m */,
+				590AD01A18806F7400594334 /* Images.xcassets */,
 			);
 			name = Login;
 			sourceTree = "<group>";
