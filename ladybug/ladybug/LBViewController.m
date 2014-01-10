@@ -40,8 +40,8 @@
     if ([segmentedControl selectedSegmentIndex] == 0){
         //init view controller with nib
         if (!self.newsfeedViewController){
-        self.newsfeedViewController = [[LBNewsfeedViewController alloc] initWithNibName:@"LBNewsfeedViewController" bundle:nil];
-
+            self.newsfeedViewController = [[LBNewsfeedViewController alloc] initWithNibName:@"LBNewsfeedViewController" bundle:nil];
+            [self.newsfeedViewController.view setFrame:self.containerView.bounds];
         }
         [self.containerView addSubview:self.newsfeedViewController.view];
     }
@@ -50,6 +50,8 @@
         //init view controller with nib
         if (!self.peopleViewController){
             self.peopleViewController = [[LBPeopleViewController alloc] initWithNibName:@"LBPeopleViewController" bundle:nil];
+            [self.peopleViewController.view setFrame:self.containerView.bounds];
+
         }
         [self.containerView addSubview:self.peopleViewController.view];
     }
@@ -58,6 +60,7 @@
         //init view controller with nib
         if (!self.profileViewController){
             self.profileViewController = [[LBProfileViewController alloc] initWithNibName:@"LBProfileViewController" bundle:nil];
+            [self.profileViewController.view setFrame:self.containerView.bounds];
         }
         [self.containerView addSubview:self.profileViewController.view];
     }
