@@ -11,6 +11,6 @@
 @interface LBSession : NSObject
 @property (strong, nonatomic) NSString *sessionID;
 +(LBSession *)defaultSession;
-
+- (void) composePost:(NSString *) content;
 
 @end

@@ -9,8 +9,10 @@
 #import "LBNewsfeedViewController.h"
 #import "LBNewsfeedCell.h"
 #import "LBpost.h"
+#import "LBSession.h"
 
-@interface LBNewsfeedViewController ()
+@interface LBNewsfeedViewController ()<UITextFieldDelegate>
+
 @property NSOperationQueue* newsfeedQueue;
 
 @end
@@ -30,10 +32,59 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.composeText.delegate=self;
     //TODO: create list with User objects
     
     [self makeJSONRequest];
 
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.composeText) {
+        [textField resignFirstResponder];
+    }
+    return NO;
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear: animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    // Do any additional setup after loading the view from its nib.
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear: animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object: nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object: nil];
+    
+    
+    // Do any additional setup after loading the view from its nib.
+}
+-(void) keyboardWillShow: (NSNotification*) notification{
+    NSDictionary * info=[notification userInfo];
+    CGRect endFrame= [((NSValue*)info [UIKeyboardFrameEndUserInfoKey]) CGRectValue];
+    CGRect adjOuterFrame= self.outerView.frame;
+    adjOuterFrame.size.height-=endFrame.size.height;
+    
+    NSTimeInterval duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve curve = [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    
+    [UIView animateWithDuration:duration delay:0 options:(curve << 16) animations:^{
+        self.outerView.frame = adjOuterFrame;
+    } completion:nil];
+}
+-(void) keyboardWillHide: (NSNotification*) notification{
+    NSDictionary * info=[notification userInfo];
+    CGRect endFrame= [((NSValue*)info [UIKeyboardFrameEndUserInfoKey]) CGRectValue];
+    CGRect adjOuterFrame= self.outerView.frame;
+    adjOuterFrame.size.height+=endFrame.size.height;
+    
+    NSTimeInterval duration = [[info objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    UIViewAnimationCurve curve = [[info objectForKey:UIKeyboardAnimationCurveUserInfoKey] integerValue];
+    
+    [UIView animateWithDuration:duration delay:0 options:(curve << 16) animations:^{
+        self.outerView.frame = adjOuterFrame;
+    } completion:nil];
 }
 
 -(void)makeJSONRequest{
@@ -84,7 +135,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //TODO: modify height to message length 
-    return 147;
+    return 118;
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,4 +144,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)composeButtonPressed:(id)sender {
+    LBSession * current= [LBSession defaultSession];
+    [current composePost:self.composeText.text];
+    [self.composeText setText:@""];
+}
 @end
