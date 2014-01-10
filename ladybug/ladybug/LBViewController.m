@@ -24,6 +24,12 @@
     [self.segmentControl addTarget:self
                          action:@selector(pickOne:)
                forControlEvents:UIControlEventValueChanged];
+    if (!self.newsfeedViewController){
+        self.newsfeedViewController = [[LBNewsfeedViewController alloc] initWithNibName:@"LBNewsfeedViewController" bundle:nil];
+        [self.newsfeedViewController.view setFrame:self.containerView.bounds];
+    }
+    [self.containerView addSubview:self.newsfeedViewController.view];
+    
     
 }
 
@@ -35,6 +41,9 @@
 
 -(void) pickOne:(id)sender{
     UISegmentedControl *segmentedControl = (UISegmentedControl *)sender;
+    [[self.containerView subviews]
+     makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
     //change the view
     //1. newsfeed, 2. people, 3. profile
     if ([segmentedControl selectedSegmentIndex] == 0){
@@ -57,6 +66,14 @@
     }
     
     if ([segmentedControl selectedSegmentIndex] == 2){
+        //add newsfeed subview for prettiness and whatnot
+        if (!self.newsfeedViewController){
+            NSLog(@"newsfeed guy doesnt exist");
+            self.newsfeedViewController = [[LBNewsfeedViewController alloc] initWithNibName:@"LBNewsfeedViewController" bundle:nil];
+            [self.newsfeedViewController.view setFrame:self.containerView.bounds];
+        }
+        [self.containerView addSubview:self.newsfeedViewController.view];
+        
         //init view controller with nib
         if (!self.profileViewController){
             self.profileViewController = [[LBProfileViewController alloc] initWithNibName:@"LBProfileViewController" bundle:nil];

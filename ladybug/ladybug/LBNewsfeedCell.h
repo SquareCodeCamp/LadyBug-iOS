@@ -1,5 +1,5 @@
 //
-//  LBProfileViewController.h
+//  LBNewsfeedCell.h
 //  ladybug
 //
 //  Created by square on 1/10/14.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LBProfileViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface LBNewsfeedCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UITextView *postText;
 @property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UILabel *basicInfo;
-
+@property (weak, nonatomic) IBOutlet UILabel *location;
 
 @end

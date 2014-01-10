@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LBNewsfeedViewController : UIViewController
+@interface LBNewsfeedViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) NSArray * tableData;
+
 
 @end
