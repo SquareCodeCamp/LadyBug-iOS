@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //TODO populate properties with server info, for now, it's just assigned by default
 }
 
 - (void)didReceiveMemoryWarning

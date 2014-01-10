@@ -27,6 +27,7 @@
 		590AD0401880726200594334 /* LBPeopleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590AD03E1880726200594334 /* LBPeopleViewController.xib */; };
 		590AD0441880728500594334 /* LBProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590AD0421880728500594334 /* LBProfileViewController.m */; };
 		590AD0451880728500594334 /* LBProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590AD0431880728500594334 /* LBProfileViewController.xib */; };
+		590AD047188079BC00594334 /* ladybugPic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 590AD046188079BC00594334 /* ladybugPic.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		590AD0411880728500594334 /* LBProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBProfileViewController.h; sourceTree = "<group>"; };
 		590AD0421880728500594334 /* LBProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBProfileViewController.m; sourceTree = "<group>"; };
 		590AD0431880728500594334 /* LBProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LBProfileViewController.xib; sourceTree = "<group>"; };
+		590AD046188079BC00594334 /* ladybugPic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ladybugPic.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 		590AD00618806F7400594334 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				590AD046188079BC00594334 /* ladybugPic.jpeg */,
 				590AD00718806F7400594334 /* ladybug-Info.plist */,
 				590AD00818806F7400594334 /* InfoPlist.strings */,
 				590AD00B18806F7400594334 /* main.m */,
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				590AD0451880728500594334 /* LBProfileViewController.xib in Resources */,
+				590AD047188079BC00594334 /* ladybugPic.jpeg in Resources */,
 				590AD01B18806F7400594334 /* Images.xcassets in Resources */,
 				590AD01318806F7400594334 /* Main_iPhone.storyboard in Resources */,
 				590AD00A18806F7400594334 /* InfoPlist.strings in Resources */,
