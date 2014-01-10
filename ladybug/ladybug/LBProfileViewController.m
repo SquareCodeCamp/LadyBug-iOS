@@ -7,7 +7,7 @@
 //
 
 #import "LBProfileViewController.h"
-#import "LBNewsfeedCell.h"
+#import "LBProfileTableCell.h"
 
 @interface LBProfileViewController ()
 
@@ -37,7 +37,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //TODO: modify height to message length
-    return 147;
+    return 55;
 }
 
 //delegate method
@@ -51,10 +51,10 @@
 {
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
-    LBNewsfeedCell *cell = (LBNewsfeedCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    LBProfileTableCell *cell = (LBProfileTableCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"LBNewsfeedCell" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ProfileTableCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
     
