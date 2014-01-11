@@ -26,6 +26,13 @@
     return self;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear: animated];
+    [self.email becomeFirstResponder];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -66,15 +73,27 @@
 
 - (IBAction)logInButtonPressed:(id)sender {
     //send stuff to the server
-    NSURLRequest * request= [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://codecamp-ladybug.herokuapp.com"]];
-    
+    NSMutableURLRequest * request= [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://codecamp-ladybug.herokuapp.com/login.json"]];
+    NSDictionary * body=[[NSDictionary alloc] initWithObjectsAndKeys:@"email", self.email.text, @"password", self.password.text, nil];
+    NSData* json=[NSJSONSerialization dataWithJSONObject:body options:0 error:0];
+    [request setHTTPBody: json];
+    [request setHTTPMethod: @"POST"];
+    NSLog(@"String sent from server %@",[[NSString alloc] initWithData:json encoding:NSUTF8StringEncoding]);
+
     [NSURLConnection sendAsynchronousRequest:request  queue:self.loginQueue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+         NSLog(@"String sent from server %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+
             LBSession * current= [LBSession defaultSession];
-            current.sessionID=@"placeholder";
+            NSDictionary* json=[NSJSONSerialization JSONObjectWithData:data options:0 error:0];
+            current.sessionID=json [@"token"];
+        NSLog(@"hello");
+
+        NSLog(@"%@",current.sessionID);
             [self dismissViewControllerAnimated:YES completion: nil];
     }];
 
-    
+
+
 }
 
 - (IBAction)registerButtonPressed:(id)sender {

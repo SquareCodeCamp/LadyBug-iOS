@@ -22,7 +22,7 @@
     return defaultSession;
 }
 - (void) composePost:(NSString *) content{
-    NSMutableURLRequest * request= [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://codecamp-ladybug.herokuapp.com"]];
+    NSMutableURLRequest * request= [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://codecamp-ladybug.herokuapp.com/posts"]];
     NSDictionary * body=@{@"token": [LBSession defaultSession].sessionID, @"post": @{@"content": content}};
     NSData* json=[NSJSONSerialization dataWithJSONObject:body options:0 error:0];
     [request setHTTPBody: json];
